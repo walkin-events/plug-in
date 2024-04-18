@@ -4,7 +4,7 @@
 
 #### Get events
 
-```http
+```
   GET api/1.1/obj/eventview?constraints=[ { "key": "is_display_conference", "constraint_type": "equals", "value": "yes" }, { "key": "partner_id", "constraint_type": "equals", "value": "{partner_id}" }]
 ```
 
@@ -14,7 +14,7 @@
 
 #### Submit event
 
-```http
+```
   POST api/1.1/wf/submit-external-event
 ```
 ```

@@ -1,0 +1,396 @@
+:root {
+    --title-font: 'Farro'; 
+    --text-font: 'Roboto'; 
+    --primary-color: #ffffff; 
+    --secondary-color: #0617BF; 
+    --additional-color: #30FFBA; 
+    --plain-text-color: #ffffff;
+    --inputs-bg: #030c5e; 
+    --info-block-bg: #2F1385; 
+    --lead-color: linear-gradient(90deg, rgba(255,163,78,1) 0%, rgba(206,9,255,1) 50%); 
+}
+
+
+.page-container {
+    font-family: var(--text-font);
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center horizontally */
+    margin: 0 auto; /* Center horizontally */
+    max-width: 1100px;
+    background-color: var(--inputs-bg);
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Creates 3 columns */
+    gap: 10px; /* Adjust gap as needed */
+    margin: 0 auto; /* Center the grid if needed */
+    width: 100%; /* Adjust based on container's width */
+}
+
+.box {
+    margin: 10px; /* Adjust margin for spacing between boxes */
+    padding: 20px;
+    background-color: var(--info-block-bg);
+    border-radius: 2px;
+    width: 85%;
+}
+
+@media (max-width: 850px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* Creates 3 columns */
+    }
+}
+
+@media (max-width: 650px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr); /* Creates 3 columns */
+    }
+}
+
+.box .image-container {
+    width: 100%; /* Set the desired width */
+    height: 180px; /* Height is half the width for a 2:1 aspect ratio */
+    overflow: hidden; /* Hide parts of the image that exceed the container size */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Crop the image to fill the container while maintaining aspect ratio */
+}
+
+.title {
+    font-family: var(--title-font);
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.group {
+    display: flex;
+    flex-wrap: wrap; /* Allows items to wrap to the next line if there is not enough space */
+    align-items: center; /* Aligns items vertically in the center */
+    justify-content: space-between; /* Spaces out the children elements */
+    width: 100%; /* Ensure the container takes the full width */
+    max-width: 100%; /* Set maximum width to prevent exceeding screen size */
+    overflow-x: auto; /* Enable horizontal scrolling if content overflows */
+    padding: 10px; /* Add padding for better spacing */
+    box-sizing: border-box; /* Ensure padding is included in the width calculation */
+}
+
+.dynamic-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Hide overflow content */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; /* Center items horizontally */
+    max-height: 80px; /* Set a fixed height for the container */
+}
+
+.dynamic-list li {
+    margin-right: 10px; /* Adds space between list items */
+    margin-bottom: 10px; /* Adds space below each row */
+    flex-basis: auto; /* Set the width of list items to 50% minus the margin */
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+/* Ensure other elements in the .group div also behave responsively */
+.group > * {
+    margin: 10px; /* Add some space around each item for a cleaner look */
+}
+
+.selected {
+     /* Fallback: Set a background color. */
+  background-color: white;
+  
+  /* Create the gradient. */
+  background-image: var(--lead-color);
+  
+  /* Set the background size and repeat properties. */
+  background-size: 100%;
+  background-repeat: repeat;
+
+  /* Use the text as a mask for the background. */
+  /* This will show the gradient as a text color rather than element bg. */
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; 
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+}
+
+.web-button {
+    width: 100px; /* Set the button width */
+    /* Additional styles for button (optional) */
+    margin: 0 5px; /* Add some horizontal spacing */
+    text-align: center;
+}
+
+.mob-buttons {
+    display: none;
+    margin-top: 20px;
+}
+
+.mob-button {
+    flex-grow: 1; /* Make the button take up all available space */
+}
+
+.web-buttons {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Hide overflow content */
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: right; /* Center items horizontally */
+    max-height: 80px; /* Set a fixed height for the container */
+}
+
+.button {
+    width: fit-content; /* Adjust width to fit content */
+    padding: 10px; /* Add padding */
+    border-radius: 0; /* Remove border radius */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    text-decoration: none; /* Remove default underline */
+    display: inline-block; /* Make button behave as inline-block */
+    font-weight: 600;
+}
+
+.find-sponsors {
+    color: white; /* Set font color to primary color */
+    background-color: var(--info-block-bg); /* Set background color to secondary color */
+    border-radius: 10px;
+}
+
+.submit-event {
+    color: var(--primary-color); /* Set font color to primary color */
+    background: var(--lead-color); /* Set background color to secondary color */
+    border-radius: 10px;
+}
+
+
+.toggle-buttons {
+    display: flex;
+    border: var(--info-block-bg) 2px solid;
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    background-color: var(--info-block-bg);
+}
+
+.toggle-buttons button {
+    background-color: var(--info-block-bg);
+    border-radius: 0; /* Remove border radius */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-weight: 600;
+    width: 90px;
+    height: 30px;
+    color: white;
+    border-radius: 10px;
+}
+
+.toggle-buttons button.selected-toggle {
+    color: var(--info-block-bg);
+    background-color: white;
+}
+
+.info-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.title-container {
+    font-size: 24px;
+}
+
+.info-container .column-register {
+    flex: 0 0 auto; /* Column width fits content */
+    height: auto;
+    justify-content: flex-end; /* Align items to the bottom */
+    height: 100%; /* Take all available vertical space */
+}
+
+.register {
+    width: 100px;
+    color: white;
+    background-color: var(--inputs-bg);
+    border: none;
+    font-weight: 600;
+    height: 30px;
+    cursor: pointer; /* Change cursor to pointer on hover */
+    border-radius: 10px;
+}
+
+.hosts {
+    font-size: 14px;
+    margin-top: -3px;
+}
+
+.startDate {
+    font-size: 11px;
+}
+
+.box-featured {
+    background-color: var(--info-block-bg);
+    border: 10px solid;
+    border-image-slice: 1;
+    border-width: 5px;
+    border-image-source: var(--lead-color);
+}
+
+.text-featured {
+    color: white;
+}
+
+.button-featured {
+    color: var(--primary-color);
+    background: var(--lead-color);
+}
+
+.date-picker-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 20px 0px 0px 20px;
+}
+
+.event-date-picker {
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 2px solid; /* Using a gradient border might not be directly possible */
+    border-image-source: var(--lead-color);
+    border-image-slice: 1;
+    background-color: var(--info-block-bg);
+    color: white; /* This will color the text inside the input */
+    
+}
+
+.event-date-picker::-webkit-calendar-picker-indicator {
+    filter: invert(1); /* Simple way to ensure the calendar icon is visible against a dark background */
+}
+
+.clear-date {
+    padding: 10px 15px;
+    margin-left: 5px;
+    font-size: 16px;
+    background-color: white;
+    border: 2px solid var(--info-block-bg);
+    color: var(--info-block-bg);
+    cursor: pointer;
+}
+
+.flatpickr-calendar {
+    background-color: var(--info-block-bg) !important;
+    border: 2px solid; /* Using a gradient border might not be directly possible */
+    border-image-slice: 1;
+    border-image-source: var(--lead-color);
+    color: white !important;
+}
+
+/* Text color for the month and weekdays in the calendar */
+.flatpickr-month .flatpickr-current-month,
+.flatpickr-weekday {
+    color: white !important;
+}
+
+.flatpickr-day {
+    color: white !important;
+}
+
+.flatpickr-day:hover, .flatpickr-day:focus {
+    background-color: var(--lead-color) !important;
+    color: white !important;
+}
+
+.flatpickr-calendar .flatpickr-day.selected, 
+.flatpickr-calendar .flatpickr-day.start, 
+.flatpickr-calendar .flatpickr-day.end, 
+.flatpickr-calendar .flatpickr-day.today.selected {
+    border: 2px solid;
+    border-image-slice: 1;
+    background: none; /* Remove any background */
+    border-image-source: var(--lead-color);
+    color: white !important; /* Force white text color */
+}
+
+/* Ensure high specificity and force styles */
+.flatpickr-calendar .dayContainer .flatpickr-day.selected, 
+.flatpickr-calendar .dayContainer .flatpickr-day.start, 
+.flatpickr-calendar .dayContainer .flatpickr-day.end, 
+.flatpickr-calendar .dayContainer .flatpickr-day.today.selected {
+    color: white !important;
+}
+
+/* Ensure that the navigation arrows are visible */
+.flatpickr-prev-month,
+.flatpickr-next-month {
+    color: white !important;
+}
+
+/* Ensure hover styles are applied */
+.flatpickr-day:hover, .flatpickr-day:focus {
+    background-color: var(--lead-color) !important;
+    color: white !important;
+}
+
+.clear-date {
+    padding: 10px 15px;
+    margin-left: 5px;
+    font-size: 16px;
+    background-color: white;
+    border: 2px solid var(--info-block-bg);
+    color: var(--info-block-bg);
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+
+@media (max-width: 650px) {
+    .dynamic-list {
+        max-height: 100px; /* Double the height for two rows */
+    }
+
+    .group .web-button {
+        display: none; /* Hide buttons when screen width is less than 650px */
+    }
+
+    .mob-buttons {
+        display: flex; /* Show buttons when screen width is less than 650px */
+        gap: 10px; /* Add space between the elements */
+    }
+
+    .web-buttons {
+        min-width: 100%;
+    }
+
+    .toggle-buttons {
+        justify-content: flex-end; /* Align toggle buttons to the right */
+    }
+}

@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width initial-scale=1.0" />
+    <title>Form</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Farro"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/css/select2.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div
+      id="success-container"
+      style="display: none"
+    >
+      <h1 style="text-align: center; font-size: 30px">
+        Your Event Has Been Submitted
+      </h1>
+    </div>
+    <div class="page-container" id="page-container">
+      <h1 style="text-align: center; font-size: 30px">Submit Event</h1>
+
+      <form id="event-form">
+        <div class="form-container">
+          <div class="form-personal">
+            <div class="form-image">
+              <div class="upload-btn-wrapper">
+                <button
+                  id="upload-btn"
+                  onclick="document.getElementById('file-input').click(); return false;"
+                >
+                  UPLOAD LOGO
+                </button>
+
+                <input
+                  type="file"
+                  name="logo"
+                  id="file-input"
+                  accept="image/*"
+                  style="display: none"
+                />
+              </div>
+            </div>
+            <div class="form-column">
+              <div class="form-group">
+                <label for="name">FULL NAME *:</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your Name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">EMAIL*</label>
+                <input
+                  type="text"
+                  id="email"
+                  name="email"
+                  placeholder="Your Email"
+                />
+              </div>
+              <div class="form-group">
+                <label for="title">JOB TITLE*</label>
+                <input
+                  type="text"
+                  id="title"
+                  name="title"
+                  placeholder="Your Job Title"
+                />
+              </div>
+              <div class="form-group">
+                <label for="company">COMPANY NAME *</label>
+                <input
+                  type="text"
+                  id="company"
+                  name="company"
+                  placeholder="Company Name"
+                />
+              </div>
+              <div class="form-group">
+                <label for="website">COMPANYS WEBSITE*</label>
+                <input
+                  type="text"
+                  id="website"
+                  name="website"
+                  placeholder="Companys Website"
+                />
+              </div>
+              <div class="form-group">
+                <label for="linkein">YOUR LINKEDIN *</label>
+                <input
+                  type="text"
+                  id="linkein"
+                  name="linkein"
+                  placeholder="https://linkedin.com/vitalik"
+                />
+              </div>
+              <div class="form-group">
+                <label for="twitter">YOUR TWITTER</label>
+                <input
+                  type="text"
+                  id="twitter"
+                  name="twitter"
+                  placeholder="vitalik"
+                />
+              </div>
+              <div class="form-group">
+                <label for="telegram">YOUR TELEGRAM</label>
+                <input
+                  type="text"
+                  id="telegram"
+                  name="telegram"
+                  placeholder="vitalik"
+                />
+              </div>
+              <div class="form-group">
+                <label for="wallet">YOUR WALLET ADDRESS</label>
+                <input
+                  type="text"
+                  id="wallet"
+                  name="wallet"
+                  placeholder="0x.."
+                />
+              </div>
+            </div>
+          </div>
+          <div class="form-column form-event">
+            <div class="form-row">
+              <div class="form-group input-full">
+                <input
+                  type="text"
+                  id="inputField"
+                  name="inputField"
+                  placeholder="Event Title"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-image banner">
+                <div class="upload-btn-wrapper-banner">
+                  <button
+                    id="upload-btn-banner"
+                    onclick="document.getElementById('file-input-banner').click(); return false;"
+                  >
+                    UPLOAD BANNER
+                  </button>
+
+                  <input
+                    type="file"
+                    name="logo"
+                    id="file-input-banner"
+                    accept="image/*"
+                    style="display: none"
+                  />
+                </div>
+              </div>
+            </div>
+            <!-- Description as Multiline Text -->
+            <div class="form-row">
+              <div class="form-group full-width">
+                <textarea
+                  id="description"
+                  name="description"
+                  placeholder="Enter Description"
+                  style="height: 60px"
+                ></textarea>
+              </div>
+            </div>
+            <!-- New Row for Location and Capacity -->
+            <div class="form-row">
+              <div class="form-group full-width event-input">
+                <label for="location">Location:</label>
+                <input
+                  type="text"
+                  id="location"
+                  name="location"
+                  placeholder="Enter Location"
+                />
+              </div>
+              <div class="form-group full-width event-input">
+                <label for="capacity">Capacity:</label>
+                <input
+                  type="number"
+                  id="capacity"
+                  name="capacity"
+                  min="1"
+                  placeholder="Enter Capacity"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group event-input">
+                <label for="date-time">Start:</label>
+                <input
+                  type="text"
+                  id="start-date-time"
+                  name="date-time"
+                  placeholder="Select Date and Time"
+                />
+              </div>
+              <div class="form-group event-input">
+                <label for="date-time">End:</label>
+                <input
+                  type="text"
+                  id="end-date-time"
+                  name="date-time"
+                  placeholder="Select Date and Time"
+                />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group event-input">
+                <label for="dropdown1">Event Type:</label>
+                <select id="dropdown1" name="dropdown1">
+                  <option value="Meetup">Meetup</option>
+                  <option value="Brunch">Brunch</option>
+                  <option value="Dinner">Dinner</option>
+                  <option value="Party">Party</option>
+                  <option value="Workshop">Workshop</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group event-input">
+                <label for="inputField2">External Link:</label>
+                <input
+                  type="text"
+                  id="inputField2"
+                  name="inputField2"
+                  placeholder="https://"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div style="text-align: center; margin-top: 20px">
+        <button type="submit" id="submit-btn" class="submit">SUBMIT</button>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.34/moment-timezone-with-data.min.js"></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

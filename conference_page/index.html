@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>API Data Display</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css?family=Farro" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" />
+</head>
+<body>
+    <div class="page-container">
+        <div class="mob-buttons">
+            <button class="button mob-button find-sponsors">FIND SPONSORS</button>
+            <button class="button mob-button submit-event">SUBMIT EVENT</button>
+        </div>
+
+        <div class="date-picker-container">
+            <input type="text" id="eventDatePicker" class="event-date-picker">
+            <button id="clearDatePicker" class="clear-date">Clear</button>
+        </div>
+
+        <div class="group">
+            <ul class="dynamic-list"></ul>
+            <div class="web-buttons">
+                <button class="button web-button submit-event">SUBMIT EVENT</button>
+                <button class="button web-button find-sponsors">FIND SPONSORS</button>
+                <div class="toggle-buttons">
+                    <button>ALL</button>
+                    <button>FEATURED</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <table id="dataTable">
+                <thead></thead>
+                <tbody></tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js"></script>
+</body>
+</html>
